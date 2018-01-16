@@ -45,10 +45,8 @@
 			convCtrl.outputDropdown.isopen = !convCtrl.outputDropdown.isopen;
 		};
 
-
 		function onInputSelectionChange(newRate) {
 			if(!angular.equals(convCtrl.selectedInputCurrency, newRate)) {
-				console.log('Stelnv gia update ' + newRate.name);
 				ConverterService.updateExchangeRates(newRate.name);
 			}
 			convCtrl.inputDropdown.isopen = false;
@@ -110,7 +108,6 @@
 		function initializeVariables() {
 			convCtrl.exchangeRates = ConverterService.getExchangeRates();
 			convCtrl.selectedInputCurrency = convCtrl.exchangeRates.rates[0];
-			console.log(convCtrl.selectedInputCurrency.name);
 			convCtrl.selectedOutputCurrency = convCtrl.exchangeRates.rates[0];
 			convCtrl.inputDropdown.isopen = false;
 			convCtrl.outputDropdown.isopen = false;
