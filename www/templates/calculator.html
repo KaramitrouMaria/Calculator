@@ -9,7 +9,7 @@
 			<div class="row center-horizontally">
 				<div class="col two-padding">
 				  	<ion-item class="min-item-height">
-				    	<span class="float-right" style="font-size: 27px;">{{firstNumber}} {{operation}} {{secondNumber}}</span>
+				    	<span class="float-right span-font-1">{{firstNumber}} {{operation}} {{secondNumber}}</span>
 				  	</ion-item>
 				</div>
 			</div>
@@ -17,14 +17,14 @@
 			<div class="row center-horizontally">
 				<div class="col two-padding">
 					<ion-item class="item-fixed-height">
-						<span class="float-right" style="font-size: 20px; opacity: 0.7;">{{result}}</span>
+						<span class="float-right span-font-2" style="">{{result}}</span>
 					</ion-item>
 				</div>
 			</div>
 
-			<div class="row center-horizontally" ng-repeat="row in keyboard.rows" style="margin-bottom: 0px;"> 
-				<div class="col" ng-repeat="key in row.keys" style="border:1px solid #e6e8ea;" ng-class="{ 'equals-background' : key.type === 'equals'}">
-					<button class="button button-light btn-block" ng-click="calcCtrl.onKeyPressed(key)" style="font-size: 30px;" 
+			<div class="row center-horizontally margin-bottom-0" ng-repeat="row in keyboard.rows"> 
+				<div class="col border-grey" ng-repeat="key in row.keys" ng-class="{ 'equals-background' : key.type === 'equals'}">
+					<button class="button button-light btn-block button-fonts" ng-click="calcCtrl.onKeyPressed(key)"
 					      ng-class="{ 'not-font-size' : key.type === 'not', 'equals-background' : key.type === 'equals'}">
 						<span ng-class="{ 'label-blue' : key.type !== 'digit', 'label-red' : key.type === 'clear', 'label-white': key.type === 'equals'}">
 					  		<img ng-if="key.type === 'converter'" src="img/money.png" class="img-fluid img-money"> {{key.label}}

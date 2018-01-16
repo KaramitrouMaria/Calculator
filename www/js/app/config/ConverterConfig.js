@@ -2,9 +2,9 @@
 	'use strict';
 
 	/**
-	 * Static options for calculator configuration objects
+	 * Static options for converter configuration objects
 	 */
-	var CalculatorConfig = {
+	var ConverterConfig = {
 		KEYBOARD: { 
 			"rows": [
 				{
@@ -15,16 +15,12 @@
 						},						
 						{ 
 							"label": '', 
-							"type" : 'converter'
+							"type" : 'arrow-up'
 						},
 						{ 
-							"label": '%', 
-							"type" : 'symbol'
-						},
-						{ 
-							"label": '/', 
-							"type" : 'symbol'
-						},
+							"label": '', 
+							"type" : 'arrow-down'
+						}
 					]
 				},
 				{
@@ -40,11 +36,7 @@
 						{ 
 							"label": '9', 
 							"type" : 'digit'
-						},
-						{ 
-							"label": '*', 
-							"type" : 'symbol'
-						},
+						}
 					]
 				},
 				{
@@ -60,11 +52,7 @@
 						{ 
 							"label": '6', 
 							"type" : 'digit'
-						},
-						{ 
-							"label": '-', 
-							"type" : 'symbol'
-						},
+						}
 					]
 				},
 				{
@@ -80,11 +68,7 @@
 						{ 
 							"label": '3', 
 							"type" : 'digit'
-						},
-						{ 
-							"label": '+', 
-							"type" : 'symbol'
-						},
+						}
 					]
 				},
 				{
@@ -100,11 +84,7 @@
 						{ 
 							"label": '.', 
 							"type" : 'digit'
-						},
-						{ 
-							"label": '=', 
-							"type" : 'equals'
-						},
+						}
 					]
 				}
 			]
@@ -113,6 +93,6 @@
 
 	angular
 	.module('calculator.configuration')
-	.constant('CalculatorConfig', CalculatorConfig);
+	.constant('ConverterConfig', ConverterConfig);
 
 }() );

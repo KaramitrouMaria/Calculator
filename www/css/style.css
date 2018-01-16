@@ -1,7 +1,21 @@
-/* Empty. Add your own CSS if you like */
-
 .center-horizontally {
 	margin: 0 auto;
+}
+
+.margin-top-10 {
+	margin-top: 10px;
+}
+
+.margin-bottom-7 {
+	margin-bottom: 7px;
+}
+
+.margin-bottom-0 {
+	margin-bottom: 0px;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
 }
 
 .display-block {
@@ -12,9 +26,25 @@
 	padding: 2px !important;
 }
 
+.padding-0-5 {
+	padding: 0 5px !important;
+}
+
+.padding-0-3 {
+	padding: 0px 3px;
+}
+
 .min-item-height {
 	min-height: 150px;
 	background-color: #e6e8ea;
+}
+
+.background-color-grey {
+	background-color: #e6e8ea;
+}
+
+.border-grey {
+	border:1px solid #e6e8ea;
 }
 
 .item-fixed-height {
@@ -26,6 +56,15 @@
 
 .float-right {
 	float: right;
+}
+
+.span-font-1 {
+	font-size: 27px;
+}
+
+.span-font-2 {
+	font-size: 20px; 
+	opacity: 0.7;
 }
 
 .label-blue {
@@ -64,6 +103,94 @@ button.button.button-light.activated {
 	border-color: transparent;
 }
 
+.button-fonts {
+	font-size: 30px;
+}
+
 /*dropdown styles*/
+
+.dimension-dropdown-chevron {
+	vertical-align:top;
+	display:inline-block;
+	text-decoration:none;
+	&:hover {
+    	text-decoration: underline;
+    }
+}
+
+.dropdown-chevron:hover {
+	text-decoration: underline;
+}
+
+.selected {
+	color: #0095ff;
+	text-decoration: underline;
+}
+
+.dropdown-row-height {
+	min-height: 60px;
+}
+
+#single-input-button, #single-output-button {
+	font-size: 27px; 
+	color: #0095ff; 
+	background-color: #e6e8ea;
+}
+
+.ul-layout {
+	margin-top: 5px; 
+	padding: 4px; 
+	min-width: 70px; 
+	max-height: 250px;
+	overflow-y: scroll;
+}
+
+.li-layout {
+	padding: 4px; 
+	margin: 2px auto; 
+	width: 50px; 
+	font-size: 15px;
+}
+
+.number-row {
+	padding: 0; 
+	min-height: 40px; 
+}
+
+.number-col {
+	font-size: 23px; 
+	background-color: #e6e8ea; 
+	padding-right: 0px;
+} 
+
+.currency-col {
+	font-size: 15px; 
+	background-color: #e6e8ea; 
+	padding-left: 0px;
+}
+
+.selected-input {
+	border:1px solid #0095ff;
+}
+
+.selected-dropdown {
+	border-top:1px solid #0095ff;
+	border-left:1px solid #0095ff;
+	border-right:1px solid #0095ff;
+}
+
+.selected-input-number {
+	border-left:1px solid #0095ff;
+	border-bottom:1px solid #0095ff;
+}
+
+.selected-input-currency {
+	border-right:1px solid #0095ff;
+	border-bottom:1px solid #0095ff;
+}
+
+
+
+
 
 

@@ -48,7 +48,7 @@
                 function (ConverterDataService, $stateParams, ConverterService) {
                     return ConverterDataService.initializeExchangeRates($stateParams.baseExchangeId)
                       .then(function(){
-                          ConverterService.setExchangeRates(ConverterDataService.getExchangeRates());
+                          ConverterService.constructExchangeRates(ConverterDataService.getExchangeRates());
                       });
                 }
             ]
