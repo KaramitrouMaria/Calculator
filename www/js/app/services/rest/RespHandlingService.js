@@ -28,7 +28,6 @@
 
 		function handleError(error, errorStatus, deferred) {
 	        /*InfoService.error(Constants.MESSAGES.ERROR, Constants.MESSAGES.GENERIC_ERROR_MESSAGE);*/
-	        console.log( "ton hpiame !!!! ");
 	        deferred.reject( error );
 		};
 	};

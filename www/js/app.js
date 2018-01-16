@@ -56,7 +56,7 @@
       });
     
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/converter');
+    $urlRouterProvider.otherwise('/app/calculator');
   });
 
   calculator.run(function($ionicPlatform) {

@@ -11,20 +11,19 @@
 		//controller's variables
 		var convCtrl = this;
 
-		convCtrl.exchangeRates = ConverterService.getExchangeRates();
-		convCtrl.selectedInputCurrency = convCtrl.exchangeRates.rates[0];
-		convCtrl.selectedOutputCurrency = convCtrl.exchangeRates.rates[0];
-		convCtrl.inputNumber = "";
-		convCtrl.outputNumber = "";
 		convCtrl.inputDropdown = {
 			isopen: false
 		};
 		convCtrl.outputDropdown = {
 			isopen: false
 		};
-
+		
 		$scope.keyboard = ConverterConfig.KEYBOARD;
-		convCtrl.isInputNumberUpdated = true;
+
+        $scope.$watch(
+            ConverterService.getExchangeRates,
+            initializeVariables
+        );
 		
 		//controller's functions
 		convCtrl.toggleInputCurrencyDropDown = toggleInputCurrencyDropDown;
@@ -49,11 +48,10 @@
 
 		function onInputSelectionChange(newRate) {
 			if(!angular.equals(convCtrl.selectedInputCurrency, newRate)) {
-				convCtrl.selectedInputCurrency = newRate;
+				console.log('Stelnv gia update ' + newRate.name);
+				ConverterService.updateExchangeRates(newRate.name);
 			}
 			convCtrl.inputDropdown.isopen = false;
-
-			// prepei na kanw call kai na parw ta kainourgia rates
 		};
 
 		function onOutputSelectionChange(newRate) {
@@ -75,6 +73,8 @@
 			    case 'clear':
 			        clearNumbers();
 			        break;
+			    case 'not':
+			        break;
 			    default:
 			        updateNumber(key.label);
 			}
@@ -91,9 +91,9 @@
 
     	function evaluateResult() {
     		if(convCtrl.isInputNumberUpdated && isNumberValid(convCtrl.inputNumber)) {
-    			convCtrl.outputNumber = eval(convCtrl.inputNumber + "*" + convCtrl.selectedOutputCurrency.value);
+    			convCtrl.outputNumber = eval(convCtrl.inputNumber + "*" + convCtrl.selectedOutputCurrency.value).toString();
     		} else if (!convCtrl.isInputNumberUpdated && isNumberValid(convCtrl.outputNumber)) {
-    			convCtrl.inputNumber = eval(convCtrl.outputNumber + "/" + convCtrl.selectedOutputCurrency.value);
+    			convCtrl.inputNumber = eval(convCtrl.outputNumber + "/" + convCtrl.selectedOutputCurrency.value).toString();
     		} 
 		}
 
@@ -105,6 +105,16 @@
 
     	function isNumberValid(number) {
 			return (number - 0) == number && (''+number).trim().length > 0;
+		}
+
+		function initializeVariables() {
+			convCtrl.exchangeRates = ConverterService.getExchangeRates();
+			convCtrl.selectedInputCurrency = convCtrl.exchangeRates.rates[0];
+			console.log(convCtrl.selectedInputCurrency.name);
+			convCtrl.selectedOutputCurrency = convCtrl.exchangeRates.rates[0];
+			convCtrl.inputDropdown.isopen = false;
+			convCtrl.outputDropdown.isopen = false;
+			clearNumbers();
 		}
 	}
 }() );

@@ -8,13 +8,15 @@
 		.module('calculator.services')
 		.service('ConverterService', ConverterService);
 
-	ConverterService.$inject = [];
+	ConverterService.$inject = ['ConverterDataService'];
 
-	function ConverterService() {
+	function ConverterService(ConverterDataService) {
 
 		var service = {
 			constructExchangeRates: constructExchangeRates,
-			getExchangeRates: getExchangeRates
+			getExchangeRates: getExchangeRates,
+			setExchangeRates: setExchangeRates,
+			updateExchangeRates: updateExchangeRates
 			
 		};
 
@@ -26,13 +28,14 @@
         function constructExchangeRates(exchangeRates) {
 
     		var rates = [];
+    		var newExchangeRates = {};
         	for (var property in exchangeRates) {
 				if (property === 'base') {
-					_exchangeRates[property] = exchangeRates[property];
+					newExchangeRates[property] = exchangeRates[property];
 					rates.push(createRateObject(exchangeRates[property], 1));
 				
 				} else if(property === 'date') {
-					_exchangeRates[property] = exchangeRates[property];
+					newExchangeRates[property] = exchangeRates[property];
 				
 				}else {
 					for ( var rate in exchangeRates.rates) {
@@ -40,11 +43,23 @@
 					}
 				}
 			}
-			_exchangeRates['rates'] = rates;
+			newExchangeRates['rates'] = rates;
+			setExchangeRates(newExchangeRates);
         };
+
+        function setExchangeRates(newExchangeRates) {
+        	_exchangeRates = newExchangeRates;
+        }
 
         function getExchangeRates() {
         	return _exchangeRates;
+        }
+
+        function updateExchangeRates(baseExchangeId) {
+        	ConverterDataService.initializeExchangeRates(baseExchangeId)
+          	.then(function(){
+                  constructExchangeRates(ConverterDataService.getExchangeRates());
+          	});
         }
 		
 		// private helper functions

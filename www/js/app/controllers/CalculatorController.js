@@ -25,7 +25,6 @@
 			        //updateNumber(key.label);
 			        break;
     			case 'not':
-			        //updateNumber(key.label);
 			        break;
 			    case 'symbol':
 			        updateOperation(key.label);
