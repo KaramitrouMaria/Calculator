@@ -20,13 +20,13 @@ To install Node on your machine, go to https://nodejs.org and click on the Downl
 3. Setting up the Ionic Framework
 To install the Ionic framework's command line interface (CLI) and Cordova, at the prompt type:
 
-npm install cordova ionic -g
+	npm install cordova ionic -g
 
 4. Download Calculator
-To download the Calculator project visit https://github.com/KaramitrouMaria/Calculator, click on the Clone or download button and then Download ZIP.
+To download the Calculator project, click on the Clone or download button of the page and then Download ZIP.
 After the download has been completed, extract the files, go to the root directory.
 To see the resulting project in your browser, type the following at the command prompt:
 
-ionic serve --lab
+	ionic serve --lab
 
 
