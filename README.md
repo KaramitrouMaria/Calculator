@@ -12,6 +12,7 @@ Using the currency converter the user is able to calculate the preferred currenc
 How can you get a copy of the project up and running on your local machine?
 
 1. Setting up Git
+
 To install Git on your computer, go to https://git-scm.com/downloads to download the Git installer for your specific computing platform.
 
 2. Setting up Node 
@@ -22,7 +23,7 @@ To install Node on your machine, go to https://nodejs.org and click on the Downl
 
 To install the Ionic framework's command line interface (CLI) and Cordova, at the prompt type:
 ```
-	npm install cordova ionic -g
+npm install cordova ionic -g
 ```
 4. Downloading the Calculator ionic project
 
@@ -30,6 +31,6 @@ To download the Calculator project, click on the Clone or download button of the
 After the download has been completed, extract the files, go to the root directory.
 To see the resulting project in your browser, type the following at the command prompt:
 ```
-	ionic serve --lab
+ionic serve --lab
 ```
 
