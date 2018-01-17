@@ -27,7 +27,7 @@
 					<button class="button button-light btn-block button-fonts" ng-click="calcCtrl.onKeyPressed(key)"
 					      ng-class="{ 'not-font-size' : key.type === 'not', 'equals-background' : key.type === 'equals'}">
 						<span ng-class="{ 'label-blue' : key.type !== 'digit', 'label-red' : key.type === 'clear', 'label-white': key.type === 'equals'}">
-					  		<img ng-if="key.type === 'converter'" src="img/money.png" class="img-fluid img-money"> {{key.label}}
+					  		<i ng-if="key.type === 'backspace'" class="icon ion-backspace-outline"></i> {{key.label}}
 						</span> 
 					</button>
 				</div>

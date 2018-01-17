@@ -15,7 +15,7 @@
 						},						
 						{ 
 							"label": '', 
-							"type" : 'converter'
+							"type" : 'backspace'
 						},
 						{ 
 							"label": '%', 
