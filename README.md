@@ -11,21 +11,21 @@ Using the currency converter the user is able to calculate the preferred currenc
 ## Getting Started
 How can you get a copy of the project up and running on your local machine?
 
-1. Setting up Git
+### 1. Setting up Git
 
 To install Git on your computer, go to https://git-scm.com/downloads to download the Git installer for your specific computing platform.
 
-2. Setting up Node 
+### 2. Setting up Node 
 
 To install Node on your machine, go to https://nodejs.org and click on the Download button. Depending on your computer's platform (Windows, MacOS or Linux), the appropriate installation package is downloaded.
 
-3. Setting up the Ionic Framework
+### 3. Setting up the Ionic Framework
 
 To install the Ionic framework's command line interface (CLI) and Cordova, at the prompt type:
 ```
 npm install cordova ionic -g
 ```
-4. Downloading the Calculator ionic project
+### 4. Downloading the Calculator ionic project
 
 To download the Calculator project, click on the Clone or download button of the page and then Download ZIP.
 After the download has been completed, extract the files, go to the root directory.
